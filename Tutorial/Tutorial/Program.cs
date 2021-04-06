@@ -167,6 +167,34 @@ namespace Tutorial
             // First element of the list
             Console.WriteLine($"The first letter is {letters[0]}");
 
+            Console.WriteLine("\n--Sort, Search, and Index Lists --\n");
+
+            // Search index of list element
+            var students = new List<string> { "Pedro", "Juan", "Diego"};
+            var indexDiego = students.IndexOf("Diego");
+            Console.WriteLine($"The index of Diego is {indexDiego}");
+
+            // Search for something that doesnt exists
+            var indexAna = students.IndexOf("Ana");
+            Console.WriteLine($"The index of Ana is {indexAna}, because it doesnt exists");
+
+            // Sort a list
+            Console.WriteLine($"The list before sort: {String.Join(", ", students)}");
+            students.Sort();
+            Console.WriteLine($"The list after sort: {String.Join(", ", students)}");
+
+            Console.WriteLine("\n--Lists of Other Types --\n");
+
+            // List of int
+            var numbers = new List<int> {33, 18,45, 83,12 };
+            // Find the first 20 numbers of Fibbonaci sequence
+            var fibStart = new List<int> { 1, 1 };
+            while (fibStart.Count < 20) {
+                var prev1 = fibStart[fibStart.Count - 2];
+                var prev2 = fibStart[fibStart.Count - 1];
+                fibStart.Add(prev2 + prev1);
+            }
+            Console.WriteLine($"Fibbonaci sequence: {String.Join(", ", fibStart)}");
         }
     }
 }
